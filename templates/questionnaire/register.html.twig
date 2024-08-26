@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un Utilisateur{% endblock %}
+
+{% block body %}
+    <h1>Créer un Utilisateur</h1>
+    <div class="container mt-4">
+        {{ form_start(form, {'attr': {'class': 'row g-3'}}) }}
+            <div class="col-md-6">
+                {{ form_row(form.firstName, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_row(form.lastName, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="col-md-12">
+                {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="col-md-12">
+                {{ form_row(form.function, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="col-md-12">
+                {{ form_row(form.submit, {'attr': {'class': 'btn btn-primary', 'style': 'margin-top: 20px;'}}) }}
+            </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

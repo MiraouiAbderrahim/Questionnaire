@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultat du Questionnaire{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+                <h1>Résultat du Questionnaire</h1>
+                <p><strong>Nom:</strong> {{ user.firstName }} {{ user.lastName }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <p><strong>Score total:</strong> {{ totalScore }}</p>
+                
+
+                <p><strong>Votre résultat:</strong> {{ result }}</p>
+                <div class="position-relative my-4" style="width: 180px; height: 150px; margin: 0 auto;">
+                    <img src="{{ asset('images/arrow.png') }}" alt="Arrow" class="position-absolute" style="top: 0; left: 50%; transform: translateX(-50%); z-index: 10; width: 50px;">
+                    <img src="{{ asset('images/semicircle.png') }}" alt="Semicircle" class="w-100" style="transform: rotate({{ rotationAngle }}deg);">
+                </div>
+                <a href="{{ path('user_registration') }}" class="btn btn-primary mt-3">Recommencer</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
